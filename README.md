@@ -34,5 +34,5 @@ El repositorio está organizado de la siguiente manera:
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/r-chamorro/universidad
+   git clone https://github.com/r-chamorro/Universidad
 

@@ -43,8 +43,5 @@ Console.WriteLine("\nGracias!\n" +
     $"Subtotal:             $ {subtotal}\n" +
     $"IVA 15% =             $ {iva}\n" +
     $"Propina 10% =         $ {propina}\n" +
-    $"Total a Pagar es =    $ {total}\n"
-
-    
-    
+    $"Total a Pagar es =    $ {total}\n"   
     );
