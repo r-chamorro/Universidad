@@ -18,12 +18,15 @@ namespace estructurasSelectivas
 {
     internal class Program
     {
+           
         static void Main(string[] args)
         {
+            Console.Title = "Estructuras Condicionales";
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+
             // Declaracion de Variables:
-            int edad; // Almacena la edad del usuario para determinar mayoria de edad
-            int opcion; // La opcion que elija el usuario ejecutara el programa
-            int mate, espa, eng; // Notas de las materias a evaluar
+            int opcion, edad, mate, espa, eng; // Declarando variables de tipo int
             double a, b,c; // Numeros que el usuario puede asignar en algunos programas
 
             Console.WriteLine("Bienvenido a su selector de Programas!");
@@ -33,6 +36,8 @@ namespace estructurasSelectivas
             Console.WriteLine("3 - Operaciones con 2 numeros");
             Console.WriteLine("4 - Determine el tipo de numero (Positivo, Negativo o Neutro)");
             Console.WriteLine("5 - Devuelve el mayor de 3 numeros");
+            Console.WriteLine("6 - Es par o es impar?");
+            Console.WriteLine("7 - Evaluador de Triangulos");
 
             opcion = int.Parse(Console.ReadLine());
 
@@ -40,7 +45,7 @@ namespace estructurasSelectivas
             switch (opcion)
             {
                 case 1:
-
+                    Console.Title = "Mayoria de Edad";
                     /*
                         Ejercicio 1:
                         Realizar un programa que me permita leer la edad de una persona, determinar y señalar si la persona es mayor o menor de edad, utilizando la estructura de
@@ -67,7 +72,7 @@ namespace estructurasSelectivas
 
 
                 case 2:
-
+                    Console.Title = "Evaluacion Escolar";
                     /*
                         Determinar si un alumno aprueba o reprueba el curso, sabiendo que aprobará si
                         su promedio de tres calificaciones es mayor o igual a 70; reprueba en caso
@@ -101,7 +106,7 @@ namespace estructurasSelectivas
                         multiplique, si el primero es mayor que el segundo que los reste y sino que realice
                         la suma.
                      */
-
+                    Console.Title = "Calculos Matematicos";
 
                     Console.WriteLine("Bienvenido a Calculos Matematicos!");
                     Console.WriteLine("Deberas elegir 2 numeros cualquiera!");
@@ -132,6 +137,7 @@ namespace estructurasSelectivas
                     break;
 
                 case 4:
+                    Console.Title = "Negativo Positivo Neutro";
                     Console.Write("Ingresa un numero cualquiera, yo te dire si es Positivo, negativo o neutro ");
                     a = double.Parse(Console.ReadLine()); // Guardando el valor entregado por el usuario
 
@@ -151,6 +157,7 @@ namespace estructurasSelectivas
                     break;
 
                 case 5:
+                    Console.Title = "3 Numeros, 3 opciones";
                     /*
                         Leer tres números diferentes y determinar cuál es el mayor de ellos, utilizando
                         la estructura de control selectiva if-else para solucionar el problema y
@@ -184,6 +191,86 @@ namespace estructurasSelectivas
                     }
 
                     break;
+
+                case 6:
+                    Console.Title = "Par o Impar";
+
+                    /*
+                     Determinar si un numero ingresado por teclado es par o impar.
+                     */
+
+                    Console.Write("Ingresa un numero entero y te dire si es par o impar: ");
+                    opcion= int.Parse(Console.ReadLine());
+                    if (opcion % 2 == 0)
+                    {
+                        Console.WriteLine("Esto es un numero Par!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Esto es un numero Impar!");
+                    }
+
+
+                    break;
+
+                case 7:
+                    /*
+                    Realizar un programa que lea tres números enteros de un supuesto triángulo,
+                    determine si realmente forman un triángulo, y muestre el tipo de triángulo que es
+                    (si es un triángulo)
+                     */
+                    Console.Title = "Validador de Triangulos";
+
+                    Console.WriteLine("\nBienvenido a tu Evaluador de triangulos!");
+                    Console.WriteLine("\nTe dire si los valores que me brindas forman un triangulo");
+                    Console.WriteLine("Y si son un triangulo te dire que tipo es!");
+                    Console.WriteLine("Por favor ingresa el valor del primer lado");
+                    a  = double.Parse((string)Console.ReadLine());
+                    Console.WriteLine("Por favor ingresa el valor del segundo lado");
+                    b = double.Parse((string)Console.ReadLine());
+                    Console.WriteLine("Por favor ingresa el valor del tercer lado");
+                    c = double.Parse((string)Console.ReadLine());
+
+
+                    // Validando el triangulo:
+                    if ((a + b) > c && (a + c) > b && (b + c) > a)
+                    {
+                        Console.WriteLine("Esto si es un triangulo!");
+                        Console.WriteLine("Presiona una tecla y te dire de que tipo!!");
+                        Console.ReadKey();
+                        if (a == b && b == c)
+                        {
+                            Console.WriteLine("Todos los lados son iguales!");
+                            Console.WriteLine("Esto es un Triangulo 'Equilátero' ");
+                        }
+                        else if (a == b || b == c || a == c)
+
+                        {
+                            Console.WriteLine("Al menos 2 de sus lados son iguales!");
+                            Console.WriteLine("Esto es un Triangulo Isósceles!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Esto debe ser un Triangulo Escaleno!!");
+                        }
+                    }
+                    else 
+                    {
+                        Console.WriteLine("No se tu pero no lo veo muy triangular!");
+                        Console.WriteLine("Esto No es un triangulo!");
+                    }
+                    
+
+
+                    break;
+                
+                default:
+                    Console.WriteLine("Opcion No valida, intente de nuevo");
+                    
+                   break;
+                        
+
+
             }
 
             
