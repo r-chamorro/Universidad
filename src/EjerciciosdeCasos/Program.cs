@@ -355,7 +355,9 @@ namespace EjerciciosdeCasos
                             break;
 
                         case 'H': case 'h':
-                            resultado = c.ToString("X");
+                            //resultado = c.ToString("X");
+                            //Console.WriteLine($"El Numero {c} en Binario se expresa asi: {resultado}");
+                            resultado = Convert.ToString(c, 16);
                             Console.WriteLine($"El Numero {c} en Binario se expresa asi: {resultado}");
 
                             break;
