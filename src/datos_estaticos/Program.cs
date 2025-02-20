@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Linq; // Libreria para usar el metodo Average() del arreglo en punto 2
 using System.Net.Http.Headers;
 
@@ -12,7 +13,7 @@ namespace datos_estaticos
             /*Estructura de datos estáticos. Arreglos en C#
 
 
-4.	Construya un programa que realice la siguiente operación. Sean 2 vectores numéricos A y B de 6 elementos numéricos cada uno. El vector A se debe llenar solo con valores pares y el vector B solo con valores impares. En un vector C guarde el resultado de ejecutar 3A + 2B. Imprima el vector C en forma descendente. Determine el promedio del vector A y el promedio del Vector B.
+
 5.	Crea un arreglo de números y escribe un programa que encuentre el valor máximo y el valor mínimo en ese arreglo.
 6.	Crea un arreglo con varios números enteros y escribe un programa que cuente cuántos números son pares y cuántos son impares.
 7.	Crea un arreglo de 5 elementos y escribe un programa que imprima el arreglo en orden inverso.
@@ -33,6 +34,7 @@ namespace datos_estaticos
             Console.WriteLine("1 - Sumar un arreglo de tamano 'n' ");
             Console.WriteLine("2 - Promedio de 5 valores");
             Console.WriteLine("3 - Adivina El valor interno");
+            Console.WriteLine("4 - Vectores Numericos");
             Console.WriteLine("0 - Para salir del programa");
             opcion = int.Parse(Console.ReadLine());
 
@@ -105,9 +107,75 @@ namespace datos_estaticos
                         break;
 
 
+                    case 4:
+                    //4.Construya un programa que realice la siguiente operación.Sean 2 vectores numéricos A y B de 6 elementos numéricos cada uno.                    
+                    //El vector A se debe llenar solo con valores pares y el vector B solo con valores impares. En un vector C guarde el resultado de ejecutar 3A + 2B.
+                    //Imprima el vector C en forma descendente.Determine el promedio del vector A y el promedio del Vector B.
+
+                    int par, impar;
+                    double promedioA, promedioB;
+
+                    int[] a_par= new int[6]; //Declarando varialbes a emplear
+                    int[] b_impar = new int[6];
+                    int[] c_suma = new int[6];
 
 
-                    default:
+                    Console.WriteLine("Ingrese Valores Pares para el arreglo 'A' ");
+                    for (int j = 0; j < 6; j++)
+                    {
+                        Console.Write($"Ingrese el valor numero {j + 1}: ");
+                        par = int.Parse(Console.ReadLine());
+                        if (par % 2 == 0)
+                        {
+                            a_par[j] = par;
+
+                        }
+                        else 
+                        { 
+                            Console.WriteLine("Este arreglo solo permite numeros Pares! Intenta de nuevo");
+                            j--;
+                        }
+                        
+                    }
+                    
+                    Console.WriteLine("Ingrese Valores Impares para el arreglo 'B' ");
+                    for (int j = 0; j < 6; j++)
+                    {
+                        Console.Write($"Ingrese el valor numero {j + 1}: ");
+                        impar = int.Parse(Console.ReadLine());
+                        if (impar % 2 != 0)
+                        {
+                            b_impar[j] = impar;
+
+                        }
+                        else {
+                            Console.WriteLine("Este arreglo solo permite numeros Impares! Intenta de nuevo");
+                                j--; }
+                    }
+
+                    for (int j=0; j<6;j++) 
+                    {
+                        c_suma[j] = (3 * a_par[j]) + (2 * b_impar[j]);
+
+                    }
+
+
+                    Array.Sort(c_suma); // Ordenando los Valores del arreglo C
+                    Array.Reverse(c_suma); // Invirtiendo el orden del arreglo C
+                    Console.WriteLine("El valor del elemento C de forma descendente");
+
+
+                    for (int j = 0; j <6; j++)
+                    {
+                        Console.WriteLine($"Numero {j+1} es: {c_suma[j]}");                        
+                    }
+                    Console.WriteLine($"El promedio del grupo A es: {Math.Round(a_par.Average(),2)}");
+                    Console.WriteLine($"El promedio del grupo B es: {Math.Round(b_impar.Average(),2)}");
+
+
+                    break;
+
+                default:
 
                         Console.WriteLine("Debera selecciona un numero entero entre 1 y 12");
                         break;
