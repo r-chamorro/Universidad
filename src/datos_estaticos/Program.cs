@@ -249,45 +249,45 @@ namespace datos_estaticos
 
                     break;
 
-                    case 8:
-                    //8.	Realice un programa que tenga las siguientes operaciones. Tiene 4 vectores A,B,C y D de 10 elementos numéricos cada uno, 
-                    //llene el vector A con números pares, el vector B con números impares, el vector C con la suma de A + B, el vector D con la resta de A – B. 
-                    //Determinar la suma de cada vector y utilizarlo para llenar el vector R que 4 elementos numéricos, es decir la suma del vector A corresponde a la 
-                    //posición 0 del Vector R, la suma del vector B corresponde a la posición 1 del vector R, y así respectivamente con C y D. Imprima el vector R.
-                    int[] vectorA = new int[10];
-                    int[] vectorB = new int[10];
-                    int[] vectorC = new int[10];
-                    int[] vectorD = new int[10];
+                    //case 8:
+                    ////8.	Realice un programa que tenga las siguientes operaciones. Tiene 4 vectores A,B,C y D de 10 elementos numéricos cada uno, 
+                    ////llene el vector A con números pares, el vector B con números impares, el vector C con la suma de A + B, el vector D con la resta de A – B. 
+                    ////Determinar la suma de cada vector y utilizarlo para llenar el vector R que 4 elementos numéricos, es decir la suma del vector A corresponde a la 
+                    ////posición 0 del Vector R, la suma del vector B corresponde a la posición 1 del vector R, y así respectivamente con C y D. Imprima el vector R.
+                    //int[] vectorA = new int[10];
+                    //int[] vectorB = new int[10];
+                    //int[] vectorC = new int[10];
+                    //int[] vectorD = new int[10];
 
-                    //Primera Forma aleatorio fallida -_-
-                    //System.Random aleatorio = new System.Random();
-                    //Console.WriteLine($"Numero Aleatorio {aleatorio}");
+                    ////Primera Forma aleatorio fallida -_-
+                    ////System.Random aleatorio = new System.Random();
+                    ////Console.WriteLine($"Numero Aleatorio {aleatorio}");
 
-                    //Segunda Forma aleatorio, creando instancia aleatoria para generacion.
-                    Random aleatorio = new Random();
-                    //int numaleatorio = aleatorio.Next(1,101); //Numero aleatorio asignado a variable de prueba. No se necesito en final de proyecto
-                    //Console.WriteLine($"Prueba Impresion Aleatoria segunda forma {numaleatorio}");
+                    ////Segunda Forma aleatorio, creando instancia aleatoria para generacion.
+                    //Random aleatorio = new Random();
+                    ////int numaleatorio = aleatorio.Next(1,101); //Numero aleatorio asignado a variable de prueba. No se necesito en final de proyecto
+                    ////Console.WriteLine($"Prueba Impresion Aleatoria segunda forma {numaleatorio}");
 
-                    for (int j = 0; j < 10; j++)
-                    {
-                        if(numeroaleatorio aleatorio.Next()%2==0)
-                        {
-                            vectorA[j] = aleatorio.Next(1, 101);
-                        }
-                        else
-                        {
-                            j--;
-                        }
-
-
-
-                    }
+                    //for (int j = 0; j < 10; j++)
+                    //{
+                    //    if(numeroaleatorio aleatorio.Next()%2==0)
+                    //    {
+                    //        vectorA[j] = aleatorio.Next(1, 101);
+                    //    }
+                    //    else
+                    //    {
+                    //        j--;
+                    //    }
 
 
 
+                    //}
 
 
-                    break;
+
+
+
+                    //break;
 
 
                 default:
