@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Timers;
 using System.Xml;
@@ -10,16 +11,6 @@ namespace arreglosUnidimensionales2
     {
         static void Main(string[] args)
         {
-
-            /*
-            
-            
-            
-            9.	Realice un arreglo que permite ingresar 10 nombres y luego le solicite al usuario que nombre desea buscar y si lo encuentra lo muestre de lo contrario retornarlo a solicitar otro nombre.
-            */
-
-            
-
             int opcion;
             Console.Title = "Arreglos Unidimensionales 2";
             Console.WriteLine("Selecione una opcion del menu!");
@@ -31,6 +22,7 @@ namespace arreglosUnidimensionales2
             Console.WriteLine("6 - Promedio Pares");
             Console.WriteLine("7 - Vectores positivos y negativos");
             Console.WriteLine("8 - Promedio, Mayores y Menores");
+            Console.WriteLine("9 - Buscador de Nombres");
 
             opcion = int.Parse(Console.ReadLine());
             switch (opcion)
@@ -276,17 +268,68 @@ namespace arreglosUnidimensionales2
 
                 case 8:
                     //8.Realice un vector con n elementos numéricos. Luego calcule el promedio e indique los menores y los mayores al mismo.
+                    Console.WriteLine("Hola Aqui crearas un arreglo y te dire el promedio, valor maximo y minimo");
+                    int[] arreglonum; // Variable tamano de arreglo
+                    Console.WriteLine("Por favor define el tamano del arreglo: "); // Solicitando el tamano del arreglo
+                    int tamanoarreglo = int.Parse(Console.ReadLine()); // Definiendo el tamano del arreglo
+                    arreglonum = new int[tamanoarreglo]; // Creando arreglo de tamano n de acuerdo a usuario
+
+                    for (int i = 0; i < tamanoarreglo; i++)
+                    {
+                        Console.Write($"Ingrese el valor {i + 1}: ");
+                        arreglonum[i] = int.Parse(Console.ReadLine());
+                    }
+
+                    Console.WriteLine($"El promedio de los numeros brindados es: {arreglonum.Average()}");
+                    Console.WriteLine($"El valor maximo es: {arreglonum.Max()}");
+                    Console.WriteLine($"El valor minimo es: {arreglonum.Min()}");
+                    break;
+
+
+
+                case 9:
+
+                    //9.	Realice un arreglo que permite ingresar 10 nombres y luego le solicite al usuario que nombre desea buscar y
+                    //      si lo encuentra lo muestre de lo contrario retornarlo a solicitar otro nombre.
+                    string[] nombres = new string[10]; // Declarando arreglo de texto de 10 elementos
+                    string nombreabuscar; // Variable para almacenar el nombre a buscar
+
+                    
+                    for (int i = 0; i < 10; i++)
+                    {
+                        Console.Write($"Ingrese el nombre {i+1}: ");
+                        nombres[i] = Console.ReadLine(); // Llenando el arreglo de nombres
+
+                    }
+                    Console.WriteLine("Veamos si recuerdas que nombres ingresaste");
+                    Console.WriteLine("Escribe un nombre que creas que esta en la lista y yo te dire si aciertas");
+                    do
+                    {
+                        nombreabuscar = Console.ReadLine(); // Solicitando el nombre a buscar
+                        if (nombres.Contains(nombreabuscar)) // Condicional para determinar si el nombre esta en la lista
+                        {
+                            Console.WriteLine($"El nombre {nombreabuscar} esta en la lista");
+                            Console.WriteLine("Programa Finalizado");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"El nombre {nombreabuscar} no esta en la lista");
+                            Console.WriteLine("Por favor ingrese otro nombre");
+                            
+                        }
+                    } while (nombres.Contains(nombreabuscar)==false);
+
+
+
+
 
 
                     break;
 
-                default:
+                        default:
                     Console.WriteLine("Por favor Seleccione un valor entero entre 1 y 9");
                     break;
-                    
-                    
-                    
-
             }
             Console.ReadKey();
 
