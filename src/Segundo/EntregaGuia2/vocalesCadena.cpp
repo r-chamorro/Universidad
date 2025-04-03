@@ -11,7 +11,7 @@ using namespace std;
 void voCadena()
 {
     string cadena=" ";
-    int a=0,e=0,i=0,o=0,u=0,consonantes=0;
+    int a=0,e=0,i=0,o=0,u=0,otrosCaracteres=0;
     cout<<"Ingrese un texto"<<endl; 
     cin.ignore();
     getline(cin, cadena);
@@ -36,7 +36,7 @@ void voCadena()
         u++;
             break;
         default:
-        consonantes++;
+        otrosCaracteres++;
             break;
         }
     }
@@ -46,6 +46,6 @@ void voCadena()
     cout<<"Letra I: "<<i<<endl;
     cout<<"Letra O: "<<o<<endl;
     cout<<"Letra U: "<<u<<endl;
-    cout<<"Consonantes: "<<consonantes<<endl;
+    cout<<"Otros Caracteres: "<<otrosCaracteres<<endl;
 
 }

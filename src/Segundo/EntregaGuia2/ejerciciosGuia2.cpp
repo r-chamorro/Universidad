@@ -3,6 +3,7 @@
 #include "calculadoraFactorial.h"
 #include "vocalesCadena.h"
 #include "adivinaNumero.h"
+#include "dibujaTriangulos.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ void menuPrincipal()
     cout<<"2 - Calculadora Factorial"<<endl;
     cout<<"3 - Contador de Vocales en Cadena de Texto"<<endl;
     cout<<"4 - Adivina un numero"<<endl;
+    cout<<"5 - Dibuja un Triangulo"<<endl;
     cout<<"0 - Salir del programa"<<endl;
 }
 
@@ -37,6 +39,9 @@ int main ()
         break;
         case 4:
             advinaNumero();
+        break;
+        case 5:
+            dibujaTriangulo();
         break;
         case 0:
         cout<<"PROGRAMA FINALIZADO"<<endl;
