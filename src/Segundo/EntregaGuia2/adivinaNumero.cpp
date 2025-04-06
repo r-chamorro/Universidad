@@ -16,7 +16,7 @@ int rndNum = rand()%101, usuario=0, intentos=5;
 cout<<"Intente adivinar un numero entre 1 y 100"<<endl;
 cout<<"Tienes 5 Intentos"<<endl;
 
-//cout<<rndNum<<endl; // Descomentar para Debug--Muestra el valor generado.
+//cout<<rndNum<<endl; // Descomentar para Debug--Muestra el valor generado. -_-
 
 do{
     cin>>usuario;

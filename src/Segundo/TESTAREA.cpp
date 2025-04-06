@@ -1,27 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int tamano;
-    cout << "Ingresa el número de filas: ";
-    cin >> tamano;
 
-    // Imprimir el triángulo centrado
-    for (int i = 1; i <= tamano; i++)
+
+
+
+
+void drawMap(int x, int y)
+{
+
+    for (int i = 1; i <= y; i++)
     {
-        for (int j=tamano-i; j >0 ; j--)
+
+        for (int j = 1; j <=x; j++)
         {
-            cout<<" ";    
-        }
-        for (int k=1; k<=i ; k++)
-        {
-            cout<<"* ";    
+            cout<<'O';
         }
         
         cout<<endl;
-        
     }
     
 
-    return 0;
+};
+
+
+int main() {
+    int x,y;
+    cin>>x;
+    cin>>y;
+
+    drawMap(x,y);
+ return 0;  
 }
