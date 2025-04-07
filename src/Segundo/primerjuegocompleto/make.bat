@@ -19,12 +19,12 @@ got end
 
 :build
 echo Compilando...
-g++ main.cpp ./src/gameMap.cpp ./src/mapCell.cpp -o primerjuego.exe
+g++ main.cpp ./src/gameMap.cpp ./src/mapCell.cpp  ./src/player.cpp -o primerjuego.exe
 goto end
 
 :debug
 echo Compilando en modo debug...
-g++ -g main.cpp ./src/gameMap.cpp ./src/mapCell.cpp -o primerjuego_debug.exe
+g++ -g main.cpp ./src/gameMap.cpp ./src/mapCell.cpp ./src/player.cpp -o primerjuego_debug.exe
 goto end
 
 :run

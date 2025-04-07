@@ -3,14 +3,12 @@
 
 class mapCell
 {
-public:
+    public:
     mapCell();
-    void setid(int x);
-    int getid();
-
-private:
-    int id;
-
+    char getID();
+    void setID(char);
+    
+    private:
+    char id;
 };
-
 #endif

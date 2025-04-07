@@ -2,17 +2,16 @@
 #include "../headers/mapCell.h"
 using namespace std;
 
+mapCell::mapCell(): id('0'){}
 
-mapCell::mapCell() : id(0){}
-
-
-void mapCell::setid(int x)
+char mapCell::getID()
 {
- id=x;
+    return id;
 }
-int mapCell::getid()
+
+void mapCell::setID(char heroHere)
 {
-    return  id;
+    id=heroHere;
 }
-    
+
 
