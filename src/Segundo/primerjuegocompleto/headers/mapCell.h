@@ -7,8 +7,10 @@ class mapCell
     mapCell();
     char getID();
     void setID(char);
+    bool isBlocked();
     
     private:
     char id;
+    
 };
 #endif

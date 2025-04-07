@@ -22,8 +22,15 @@ main()
     {
       
       Hero.callInput(); // Define movimiento del jugador
-      mapaJuego.setPlayerCell(Hero.getPlayerX(),Hero.getPlayerY());
-      mapaJuego.drawMap(); // Indica dibujar el mapa
+      if (mapaJuego.setPlayerCell(Hero.getPlayerX(),Hero.getPlayerY()))
+      {
+        mapaJuego.drawMap(); // Indica dibujar el mapa
+      }else
+      {
+        Hero.resettoSafePosition();
+        mapaJuego.drawMap();
+      }
+      
       cout<<"Las coordenadas del Heroe son:"<<" X = "<<Hero.getPlayerX()<<" Y = "<<Hero.getPlayerY()<<endl;
      
         // gameOver=true;

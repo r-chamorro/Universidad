@@ -2,7 +2,7 @@
 #include "../headers/mapCell.h"
 using namespace std;
 
-mapCell::mapCell(): id('0'){}
+mapCell::mapCell(): id(' '){}
 
 char mapCell::getID()
 {
@@ -12,6 +12,18 @@ char mapCell::getID()
 void mapCell::setID(char heroHere)
 {
     id=heroHere;
+}
+
+bool mapCell::isBlocked()
+{
+    if (mapCell::getID()=='#')
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+    
 }
 
 

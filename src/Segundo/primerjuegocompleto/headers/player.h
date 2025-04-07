@@ -8,7 +8,14 @@ class player
         player();
         int getPlayerX();
         int getPlayerY();
+        int getPlayerLastX();
+        int getPlayerLastY();
         void callInput();
+        void setPlayerX(int);
+        void setPlayerY(int);
+        void resettoSafePosition();
+        void setPlayerLastX(int);
+        void setPlayerLastY(int);
         void increasePlayerX();
         void increasePlayerY();
         void decreasePlayerX();
@@ -17,7 +24,7 @@ class player
     protected:
         
     private:
-    int playerX, playerY;
+    int playerX, playerY, playerLastX,playerLastY;
 };
 
 
