@@ -16,7 +16,7 @@ void mapCell::setID(char heroHere)
 
 bool mapCell::isBlocked()
 {
-    if (mapCell::getID()=='#')
+    if (getID()=='#')
     {
         return true;
     }else
@@ -26,4 +26,15 @@ bool mapCell::isBlocked()
     
 }
 
+bool mapCell::isMoney()
+{
+    if (getID()=='$')
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+    
+}
 

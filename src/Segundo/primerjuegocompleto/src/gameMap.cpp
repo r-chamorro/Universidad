@@ -5,7 +5,7 @@
 #include "../headers/mapCell.h"
 #include "../headers/player.h"
 
-gameMap::gameMap(): PlayerCell(NULL) 
+gameMap::gameMap(): PlayerCell(nullptr), hero(nullptr) 
 {
     loadMapFromFile();
 };
@@ -24,25 +24,62 @@ void gameMap::drawMap()
     
 };
 
-bool gameMap::setPlayerCell(int playerX, int PlayerY)
+bool gameMap::setPlayerCell(int playerX, int playerY)
 {
-    if (!celdaMapa[playerX][PlayerY].isBlocked())
+    if (!celdaMapa[playerX][playerY].isBlocked())
     {
-        if (PlayerCell!=NULL)
+        if(celdaMapa[playerX][playerY].isMoney())
         {
-            PlayerCell->setID(' ');
+            //cout<<"Tesoro Encontrado, dinero antes: "<<hero->getPlayerMoney()<<endl;
+            hero->increasePlayerMoney();
+            if (PlayerCell!=nullptr)
+            {
+                PlayerCell->setID(' ');
+            }
+                PlayerCell = &celdaMapa[playerX][playerY];    
+                PlayerCell->setID('H');
+                //cout<<"Dinero despues: "<<hero->getPlayerMoney()<<endl;
+                return true;
         }
-            PlayerCell = &celdaMapa[playerX][PlayerY];    
-            PlayerCell->setID('H');
-            return true;
-        
+        else
+        {
+            if (PlayerCell!=nullptr)
+            {
+                PlayerCell->setID(' ');
+            }
+                PlayerCell = &celdaMapa[playerX][playerY];    
+                PlayerCell->setID('H');
+                return true;
+        }   
     }else
     {
-        hero.resettoSafePosition();
+        hero->resettoSafePosition();
         return false;
     }
     // cout<<"Las coordenadas del jugador son: X = "<<playerX<<" Y = "<<PlayerY<<endl;
 };
+
+
+void gameMap::drawIntro()
+{
+    string line; 
+    int row =0;
+    ifstream myFile("intro.txt"); //Flujo de procesos input File stream = leer desde archivo
+    if(myFile.is_open())
+    {
+        // cout<<"Prueba Carga de mapa"<<endl;
+        while (getline(myFile,line))
+        {
+         cout<<line<<endl;
+        }
+        cin>>line;
+    
+    }
+    else{
+        cout<<"FATAL ERROR: INTRO COULD NOT BE LOADED"<<endl;
+        }
+
+}
 
 void gameMap::loadMapFromFile()
 {
@@ -84,3 +121,12 @@ void gameMap::loadMapFromFile()
         }
 
 };
+
+void gameMap::finishGame()
+{
+    gameOver=true;
+}
+bool gameMap::getGameStatus()
+{
+    return gameOver;
+}

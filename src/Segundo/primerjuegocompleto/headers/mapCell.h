@@ -8,6 +8,7 @@ class mapCell
     char getID();
     void setID(char);
     bool isBlocked();
+    bool isMoney();
     
     private:
     char id;

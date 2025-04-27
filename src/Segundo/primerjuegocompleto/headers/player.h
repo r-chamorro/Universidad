@@ -10,6 +10,7 @@ class player
         int getPlayerY();
         int getPlayerLastX();
         int getPlayerLastY();
+        int getPlayerMoney();
         void callInput();
         void setPlayerX(int);
         void setPlayerY(int);
@@ -20,11 +21,13 @@ class player
         void increasePlayerY();
         void decreasePlayerX();
         void decreasePlayerY();
+        void increasePlayerMoney();
 
     protected:
         
     private:
-    int playerX, playerY, playerLastX,playerLastY;
+    int playerX, playerY, playerLastX,playerLastY, playerMoney=0;
+    
 };
 
 

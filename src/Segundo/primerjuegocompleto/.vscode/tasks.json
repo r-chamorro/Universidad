@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compilar juego",
+      "type": "shell",
+      "command": "C:\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "main.cpp",
+        "src/gameMap.cpp",
+        "src/mapCell.cpp",
+        "src/player.cpp",
+        "-Iheaders",
+        "-o",
+        "juego.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compilación del juego completo"
+    }
+  ]
+}

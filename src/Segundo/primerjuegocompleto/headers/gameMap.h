@@ -10,14 +10,18 @@ class gameMap
     gameMap();
     mapCell* PlayerCell;
     mapCell celdaMapa[15][10];
-    player hero;
+    player* hero;
     void drawMap();
     bool setPlayerCell(int, int); // obtiene las coordenadas del jugador y actualiza el mapa
-    
-    private:
-
-    protected:
+    void drawIntro();
+    void finishGame();
+    bool getGameStatus();
     void loadMapFromFile();
+    
+    private:    
+    bool gameOver = false;
+    protected:
+    
 
 };
 

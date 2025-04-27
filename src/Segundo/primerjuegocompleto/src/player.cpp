@@ -4,7 +4,7 @@
 
 using namespace std;
 
-player::player(): playerX(1),playerY(1){}
+player::player(): playerX(1),playerY(1),playerMoney(10){}
 
 int player::getPlayerX() //Getter para el valor X (Columnas)
 {
@@ -22,6 +22,11 @@ int player::getPlayerLastX()
 int player::getPlayerLastY()
 {
     return playerLastY;
+}
+
+int player::getPlayerMoney()
+{
+    return playerMoney;
 }
 
 void player::resettoSafePosition()
@@ -51,6 +56,11 @@ void player::decreasePlayerY()// Funcion para disminuir el valor de y
     playerY--;
 }
 
+void player::increasePlayerMoney()// Funcion incrementa tesoro al pasar por $
+{
+    playerMoney++;
+}
+
 void player::setPlayerX(int newPlayerX) // Establece manualmente el valor de X
 {
     playerX=newPlayerX;
@@ -74,34 +84,35 @@ void player::setPlayerLastY(int newPlayerLastY)// Establece manualmente el valor
 
 
 void player::callInput() // Recibe los movimienots del jugador desde el input
-{   
-    
-        
- 
-
+{       
     char userInput; //Guaradara la variable para el caso a emplear
     cin>>userInput; //Pide un valor al usuario
     switch (userInput)
     {
         case 'a':case 'A'://Movimiento hacia la izquierda, Limite es 0, condicional
             player::setPlayerLastX(player::getPlayerX()); // Guarda el valor de X antes del cambio en caso de ocupar volver.
+            player::setPlayerLastY(player::getPlayerY());
             player::decreasePlayerX();//Si no esta en la poscion 0, disminuye el valor
         
         break;
 
         case 'w':case 'W':
+            
             player::setPlayerLastY(player::getPlayerY());// Guarda el valor de Y antes del cambio en caso de ocupar volver.
+            player::setPlayerLastX(player::getPlayerX());
             player::decreasePlayerY(); //Si no pasa aumenta Y
         
         break;  
     
         case 'd':case 'D':
             player::setPlayerLastX(player::getPlayerX());// Guarda el valor de X antes del cambio en caso de ocupar volver.
+            player::setPlayerLastY(player::getPlayerY());
             player::increasePlayerX();
         break;
 
         case 's':case 'S':
             player::setPlayerLastY(player::getPlayerY());// Guarda el valor de Y antes del cambio en caso de ocupar volver.
+            player::setPlayerLastX(player::getPlayerX());
             player::increasePlayerY();
            
         break;
