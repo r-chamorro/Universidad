@@ -30,16 +30,9 @@ bool gameMap::setPlayerCell(int playerX, int playerY)
     {
         if(celdaMapa[playerX][playerY].isMoney())
         {
-            //cout<<"Tesoro Encontrado, dinero antes: "<<hero->getPlayerMoney()<<endl;
-            hero->increasePlayerMoney();
-            if (PlayerCell!=nullptr)
-            {
-                PlayerCell->setID(' ');
-            }
-                PlayerCell = &celdaMapa[playerX][playerY];    
-                PlayerCell->setID('H');
-                //cout<<"Dinero despues: "<<hero->getPlayerMoney()<<endl;
-                return true;
+            drawVictory();
+            finishGame();
+            return false;
         }
         else
         {
@@ -53,7 +46,8 @@ bool gameMap::setPlayerCell(int playerX, int playerY)
         }   
     }else
     {
-        hero->resettoSafePosition();
+       drawEnd();
+       finishGame();
         return false;
     }
     // cout<<"Las coordenadas del jugador son: X = "<<playerX<<" Y = "<<PlayerY<<endl;
@@ -80,6 +74,50 @@ void gameMap::drawIntro()
         }
 
 }
+
+void gameMap::drawVictory()
+{
+    string line; 
+    int row =0;
+    ifstream myFile("chest.txt"); //Flujo de procesos input File stream = leer desde archivo
+    if(myFile.is_open())
+    {
+        // cout<<"Prueba Carga de mapa"<<endl;
+        while (getline(myFile,line))
+        {
+         cout<<line<<endl;
+        }
+        cin>>line;
+    
+    }
+    else{
+        cout<<"FATAL ERROR: CHEST COULD NOT BE LOADED"<<endl;
+        }
+
+}
+
+void gameMap::drawEnd()
+{
+    string line; 
+    int row =0;
+    ifstream myFile("dead.txt"); //Flujo de procesos input File stream = leer desde archivo
+    if(myFile.is_open())
+    {
+        // cout<<"Prueba Carga de mapa"<<endl;
+        while (getline(myFile,line))
+        {
+         cout<<line<<endl;
+        }
+        cin>>line;
+    
+    }
+    else{
+        cout<<"FATAL ERROR: ENDING COULD NOT BE LOADED"<<endl;
+        }
+
+}
+
+
 
 void gameMap::loadMapFromFile()
 {

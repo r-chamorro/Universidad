@@ -14,6 +14,8 @@ class gameMap
     void drawMap();
     bool setPlayerCell(int, int); // obtiene las coordenadas del jugador y actualiza el mapa
     void drawIntro();
+    void drawVictory();
+    void drawEnd();
     void finishGame();
     bool getGameStatus();
     void loadMapFromFile();
